@@ -1,20 +1,37 @@
-# Errors
-
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
-
-The Kittn API uses the following error codes:
+# Response Codes
 
 
-Error Code | Meaning
+Every response contains <font face="Courier New">responseCode</font> and <font face="Courier New">responseDesc</font> fields. These indicate whether the request was successful or failed. The only successful </font> is denoted by a value of <em>-1</em>. All other response codes indicate failed requests. The table belows denotes all possible response codes.
+
+
+Response Code | Response Description
 ---------- | -------
-400 | Bad Request -- Your request sucks
-401 | Unauthorized -- Your API key is wrong
-403 | Forbidden -- The kitten requested is hidden for administrators only
-404 | Not Found -- The specified kitten could not be found
-405 | Method Not Allowed -- You tried to access a kitten with an invalid method
-406 | Not Acceptable -- You requested a format that isn't json
-410 | Gone -- The kitten requested has been removed from our servers
-418 | I'm a teapot
-429 | Too Many Requests -- You're requesting too many kittens! Slow down!
-500 | Internal Server Error -- We had a problem with our server. Try again later.
-503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
+-1  | Successful
+0001  | General System Error
+0023  | Required field missing or invalid type used.
+2001  | Invalid transaction type supplied.
+2002  | Invalid token type supplied.
+2107  | Transaction to VSP timed out.
+2108  | VSP not found.
+2110  | Failed to log transaction products.
+2111  | API POS not found.
+2112  | Store not found.
+2114  | Store does not support Deposits.
+2115  | Store does not support Payments.
+2116  | Store does not support Withdrawals.
+2117  | VSP does not support Deposits.
+2118  | VSP does not support Payments.
+2119  | VSP does not support Withdrawals.
+2120  | Invalid token.
+2122  | The totalAmount does not match basketAmount + cashbackAmount.
+2124  | POS provider not active.
+2125  | Store is not active.
+2121  | Cashback can only be processed on a Payment.
+2126  | Store is not linked to POS provider.
+2127  | Store does not support Cashbacks.
+2128  | VSP does not support Cashbacks.
+2129  | Store does not accept VSP.
+2130  | Store does not allow Deposits for VSP.
+2131  | Store does not allow Payments for VSP.
+2132  | Store does not allow Withdrawals for VSP.
+2133  | Store does not allow Cashback on Payments for VSP.

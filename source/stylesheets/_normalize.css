@@ -425,3 +425,14 @@ td,
 th {
     padding: 0;
 }
+
+
+
+ol {
+  counter-reset: o-counter;
+  list-style-type: none;
+}
+ol li:before {
+  content: '[' counter(o-counter) '] ';
+  counter-increment: o-counter;
+}
